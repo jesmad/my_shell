@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo 1. Testing output redirection...
+echo Created this file called test.txt > test.txt
+echo ...Finished testing output redirection. File test.txt has been created.
+
+echo 2. Testing append operator...
+echo Append at the bottom of the file >> test.txt
+echo ...Finished testing append operator. File test.txt has a new line of input at the end.
+
+echo 3. Testing ls -lLa...
+ls -lLa
+echo ...finished testing.
+
+echo 4. Testing input/output redirection again...
+cat < test.txt > test2.txt
+echo ...Finished I/O redirection. A new file test2.txt has been created with the contents of test.txt.
+
+echo 5. Testing one pipe...
+cat test.txt | wc -l
+echo ... just outputted the contents of test.txt and counted the number of lines in it
+
+echo 6. Creating a directory called newDir...
+mkdir newDir
+echo ...just created a directory.
+
+echo 7. Moving file test.txt into the newly created directory newDir... 
+mv test.txt newDir
+echo ...just finished testing moving file into a directory.
+
+echo 8. Checking the contents of the newDir directory...
+ls -lLa newDir
+echo ...finished.
+
+echo 9. Printing out the lines with line numbers of the test2.txt file...
+cat -n < test2.txt
+echo ...finished testing.
+
+echo 10. Runnning who and then piping the output to fgrep
+who | fgrep -i .edu
+echo ...finished.
+
+
